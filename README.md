@@ -452,3 +452,11 @@ There are pre-made scripts in the scripts directory. They all create five named 
       └── style.css
   make-num.bat
   ```
+
+---
+
+#### Need to do List
+
+| TASK | COMPLETE |
+| --- | --- |
+| add screenshoots for windows guide | <span style>x</i> |
