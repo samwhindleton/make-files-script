@@ -50,8 +50,8 @@ We'll be using a for loop to create:
 
 2. Create a script file `make.sh` and open it with `nano`
 
-  ```bash
-  $ nano make.sh
+  ```shell
+  nano make.sh
   ```
 
   Type the command and press enter
@@ -68,31 +68,30 @@ We'll be using a for loop to create:
 
   Install from terminal:
 
-    * MacOS
+  * MacOS
 
-      ```bash
-      $ brew update
+    ```shell
+    brew update
+    brew install nano
+    ```
 
-      $ brew install nano
-      ```
+  * Linux(Debian/Ubuntu)
 
-    * Linux(Debian/Ubuntu)
+    ```shell
+    sudo apt-get install nano
+    ```
 
-      ```bash
-      $ sudo apt-get install nano
-      ```
+  * Linux(CentOS / RHEL)
 
-    * Linux(CentOS / RHEL)
-
-      ```bash
-      $ sudo yum install nano
-      ```
+    ```shell
+    sudo yum install nano
+    ```
 
 ### Variables
 
 1. Create a variable for the folder name
 
-  ```bash
+  ```shell
   # variable name is directoryName
   # directoryName value is folder-name-
   directoryName=folder-name-
@@ -102,7 +101,7 @@ We'll be using a for loop to create:
 
 2. Create a variable for the file names
 
-  ```bash
+  ```shell
   # variable name is htmlFile
   # htmlFile value is index.html
   htmlFile=index.html
@@ -116,7 +115,7 @@ We'll be using a for loop to create:
 
 3. Create a variable for the text that will be added to a file
 
-  ```bash
+  ```shell
   # variable name is htmlTemplate
   # htmlTemplate has a multi-line value that includes spaces
   # default html template
@@ -138,7 +137,7 @@ We'll be using a for loop to create:
 
 1. Create an empty for loop that iterates `number` thru a number range of 1 to 5 `{1..5}` and displays `done.` when the for loop is complete
 
-  ```bash
+  ```shell
   # number range for loop
   # iterates thru a range of numbers
   for number in {1..5}; do
@@ -154,7 +153,7 @@ We'll be using a for loop to create:
 
 2. Create a directory with the name of the variable `directoryName` and the value of `number`
 
-  ```bash
+  ```shell
   mkdir $directoryName$number
   ```
 
@@ -162,7 +161,7 @@ We'll be using a for loop to create:
 
 3. Create files inside the directory `directoryName + number` with the name of the variable `htmlFile` and `cssFile`
 
-  ```bash
+  ```shell
   touch $directoryName$number/$htmlFile $directoryName$number/$cssFile
   ```
 
@@ -170,7 +169,7 @@ We'll be using a for loop to create:
 
 4. Add text from the variable htmlTemplate to the file `html.index` that is located in the directory `directoryName + number`
 
-  ```bash
+  ```shell
   echo "$htmlTemplate" >> $directoryName$number/$htmlFile
   ```
 
@@ -188,24 +187,24 @@ We'll be using a for loop to create:
 
 1. In order to run `make.sh` we need to change its file permission to read, write, execute. Read more about Permissions [here](https://www.linux.com/learn/understanding-linux-file-permissions).
 
-  ```bash
-  $ chmod 700 make.sh
+  ```shell
+  chmod 700 make.sh
   ```
 
   ![chmod700](/images/linux-mac/chmod700.png)
 
 2. Run the script with command `./make.sh`
 
-  ```bash
-  $ ./make.sh
+  ```shell
+  ./make.sh
   ```
 
   ![run](/images/linux-mac/run.png)
 
 3. Revert `make.sh` file permission to its default value of read, write.
 
-  ```bash
-  $ chmod 644 make.sh
+  ```shell
+  chmod 644 make.sh
   ```
 
   ![chmod644](/images/linux-mac/chmod644.png)
@@ -214,16 +213,16 @@ We'll be using a for loop to create:
 
 1. View newly created files and folders by listing all subdirectories with the command `ls *`
 
-  ```bash
-  $ ls *
+  ```shell
+  ls *
   ```
 
   ![finder](/images/linux-mac/subdirectories.png)
 
 2. Or view created files and folders in finder with the command `open .`
 
-  ```bash
-  $ open .
+  ```shell
+  open .
   ```
 
   ![finder](/images/linux-mac/finder.png)
@@ -238,7 +237,7 @@ We'll be using a for loop to create:
 
 2. Create a script file `make.bat` and open it with `nano`.
 
-  ```
+  ```shell
   nano make.bat
   ```
 
@@ -252,20 +251,20 @@ We'll be using a for loop to create:
 
 1. Create a variable for the folder name.
 
-  ```
+  ```shell
   set directoryName=folder-name-
   ```
 
 2. Create a variable for the file names.
 
-  ```
+  ```shell
   set htmlFile=index.html
   set cssFile=style.css
   ```
 
 3. Create a variable for the text that will be added to a file.
 
-  ```
+  ```shell
   set htmlTemplate=^<!DOCTYPE html^>^
 
   ^<html lang="en"^>^
@@ -289,29 +288,29 @@ We'll be using a for loop to create:
 
 1. Create an empty for loop that iterates `%%A` thru a number range of 1 to 5 `(1, 1, 5)` and displays `done.` when the for loop is complete.
 
-  ```
+  ```shell
   for /l %%A in (1, 1, 5) do (
 
   )
 
-  echo done.
+  echo done
   ```
 
 2. Create a directory with the name of the variable `directoryName` and the value of `%%A`.
 
-  ```
+  ```shell
   md %directoryName%%%A
   ```
 
 3. Create files inside the directory `directoryName + %%A` with the name of the variable `htmlFile` and `cssFile`.
 
-  ```
+  ```shell
   type nul > %directoryName%%%A\%htmlFile% && type nul > %directoryName%%%A\%cssFile%
   ```
 
 4. Add text from the variable htmlTemplate to the file `html.index` that is located in the directory `directoryName + %%A`.
 
-  ```
+  ```shell
   echo !htmlTemplate! > %directoryName%%%A\%htmlFile%
   ```
 
@@ -323,13 +322,13 @@ We'll be using a for loop to create:
 
 1. Run the script with command `make` or `make.bat`
 
-  ```
+  ```shell
   make
   ```
 
   **OR**
 
-  ```
+  ```shell
   make.bat
   ```
 
@@ -337,13 +336,13 @@ We'll be using a for loop to create:
 
 1. View newly created files and folders by listing all subdirectories with the command `dir \S`
 
-  ```
+  ```shell
   dir \S
   ```
 
 2. Or view created files and folders in Windows Explorer with the command `start .`
 
-  ```
+  ```shell
   start .
   ```
 
@@ -359,7 +358,7 @@ There are pre-made scripts in the scripts directory. They all create five named 
 
     Resulting folder structure:
 
-    ```
+    ```shell
     foo-bar/
     ├── folder-name-sophia/
     │   ├── index.html
@@ -383,7 +382,7 @@ There are pre-made scripts in the scripts directory. They all create five named 
 
   Resulting folder structure:
 
-  ```
+  ```shell
   foo-bar/
   ├── folder-name-1/
   │   ├── index.html
@@ -409,7 +408,7 @@ There are pre-made scripts in the scripts directory. They all create five named 
 
   Resulting folder structure:
 
-  ```
+  ```shell
   foo-bar\
   ├── folder-name-sophia\
   │   ├── index.html
@@ -433,7 +432,7 @@ There are pre-made scripts in the scripts directory. They all create five named 
 
   Resulting folder structure:
 
-  ```
+  ```shell
   foo-bar\
   ├── folder-name-1\
   │   ├── index.html
