@@ -348,3 +348,107 @@ We'll be using a for loop to create:
   ```
 
 ---
+
+## Pre-Made Scripts
+
+There are pre-made scripts in the scripts directory. They all create five named or numbered directories with a html.index and style.css file. The html.index file will have a default html template populated.
+
+* The scripts/linux-mac directory has two scripts.
+
+  1. Creates named directories
+
+    Resulting folder structure:
+
+    ```
+    foo-bar/
+    ├── folder-name-sophia/
+    │   ├── index.html
+    │   └── style.css
+    ├── folder-name-jackson/
+    │   ├── index.html
+    │   └── style.css
+    ├── folder-name-emma/
+    │   ├── index.html
+    │   └── style.css
+    ├── folder-name-aiden/
+    │   ├── index.html
+    │   └── style.css
+    └── folder-name-olivia/
+        ├── index.html
+        └── style.css
+    make-name.sh
+    ```
+
+  2. Creates named directories
+
+  Resulting folder structure:
+
+  ```
+  foo-bar/
+  ├── folder-name-1/
+  │   ├── index.html
+  │   └── style.css
+  ├── folder-name-2/
+  │   ├── index.html
+  │   └── style.css
+  ├── folder-name-3/
+  │   ├── index.html
+  │   └── style.css
+  ├── folder-name-4/
+  │   ├── index.html
+  │   └── style.css
+  └── folder-name-5/
+      ├── index.html
+      └── style.css
+  make-num.sh
+  ```
+
+* The scripts/windows directory has two scripts.
+
+  1. Creates named directories
+
+  Resulting folder structure:
+
+  ```
+  foo-bar\
+  ├── folder-name-sophia\
+  │   ├── index.html
+  │   └── style.css
+  ├── folder-name-jackson\
+  │   ├── index.html
+  │   └── style.css
+  ├── folder-name-emma\
+  │   ├── index.html
+  │   └── style.css
+  ├── folder-name-aiden\
+  │   ├── index.html
+  │   └── style.css
+  └── folder-name-olivia\
+      ├── index.html
+      └── style.css
+  make-name.bat
+  ```
+
+  2. Creates named directories
+
+  Resulting folder structure:
+
+  ```
+  foo-bar\
+  ├── folder-name-1\
+  │   ├── index.html
+  │   └── style.css
+  ├── folder-name-2\
+  │   ├── index.html
+  │   └── style.css
+  ├── folder-name-3\
+  │   ├── index.html
+  │   └── style.css
+  ├── folder-name-4\
+  │   ├── index.html
+  │   └── style.css
+  └── folder-name-5\
+      ├── index.html
+      └── style.css
+  make-num.bat
+  ```
