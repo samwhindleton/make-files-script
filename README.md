@@ -229,3 +229,122 @@ We'll be using a for loop to create:
   ![finder](/images/linux-mac/finder.png)
 
 ---
+
+## Windows Guide
+
+### Setup
+
+1. Open Command Prompt.
+
+2. Create a script file `make.bat` and open it with `nano`.
+
+  ```
+  nano make.bat
+  ```
+
+  Type the command and press enter.
+
+  A new file `make.bat` will be created and opened in the `nano` editor.
+
+  ***NOTE***: If you don't have nano installed, visit [Nano](https://www.nano-editor.org/) to download and install it.
+
+### Variables
+
+1. Create a variable for the folder name.
+
+  ```
+  set directoryName=folder-name-
+  ```
+
+2. Create a variable for the file names.
+
+  ```
+  set htmlFile=index.html
+  set cssFile=style.css
+  ```
+
+3. Create a variable for the text that will be added to a file.
+
+  ```
+  set htmlTemplate=^<!DOCTYPE html^>^
+
+  ^<html lang="en"^>^
+
+    ^<head^>^
+
+      ^<meta charset="utf-8"^>^
+
+      ^<title^>^</title^>^
+
+    ^</head^>^
+
+    ^<body^>^
+
+    ^</body^>^
+
+  ^</html^>
+  ```
+
+### For Loop
+
+1. Create an empty for loop that iterates `%%A` thru a number range of 1 to 5 `(1, 1, 5)` and displays `done.` when the for loop is complete.
+
+  ```
+  for /l %%A in (1, 1, 5) do (
+
+  )
+
+  echo done.
+  ```
+
+2. Create a directory with the name of the variable `directoryName` and the value of `%%A`.
+
+  ```
+  md %directoryName%%%A
+  ```
+
+3. Create files inside the directory `directoryName + %%A` with the name of the variable `htmlFile` and `cssFile`.
+
+  ```
+  type nul > %directoryName%%%A\%htmlFile% && type nul > %directoryName%%%A\%cssFile%
+  ```
+
+4. Add text from the variable htmlTemplate to the file `html.index` that is located in the directory `directoryName + %%A`.
+
+  ```
+  echo !htmlTemplate! > %directoryName%%%A\%htmlFile%
+  ```
+
+5. Save the script by pressing `ctrl + O` (ctrl + letter O, not zero) then press `enter`.
+
+  Then exit nano by pressing `ctrl + X`.
+
+### Run The Script
+
+1. Run the script with command `make` or `make.bat`
+
+  ```
+  make
+  ```
+
+  **OR**
+
+  ```
+  make.bat
+  ```
+
+### View Created Files and Folders
+
+1. View newly created files and folders by listing all subdirectories with the command `dir \S`
+
+  ```
+  dir \S
+  ```
+
+2. Or view created files and folders in Windows Explorer with the command `start .`
+
+  ```
+  start .
+  ```
+
+---
